@@ -1,19 +1,15 @@
 # Создайте программу для игры в ""Крестики-нолики"".
 import os
 clear = lambda: os.system('cls')
-move=[0]*9
+move=[0]*1000
 moves = []
 moveSimbol = ['(крестик)','(нолик)']
 line = [0]*3
 line[0] = [' ',' ',' ']
 line[1] = [' ',' ',' ']
 line[2] = [' ',' ',' ']
-row = [[]]
-diag = [[]]
-for i in range(9):
+for i in range(len(move)):
     move[i] = input(f'ход {i%2+1} игрока {moveSimbol[i%2]} (введите координаты вида 1 2 через пробел - ').split()
-    print(move[i][0])
-    print(move[i][1])
     while int(move[i][0]) not in [1,2,3] or int(move[i][1]) not in [1,2,3]:
         print('Некорректный ход. Координаты должны быть от 1 до 3.')
         move[i] = input(f'ход {i%2+1} игрока {moveSimbol[i%2]} (введите координаты вида 1 2 через пробел - ').split()
